@@ -28,6 +28,20 @@ window.addEventListener("scroll", function () {
     }
 });
 
+// Get the current year
+const currentYear = new Date().getFullYear();
+
+// Select the footer element by its ID
+const footer = document.querySelector('.footer-copyright');
+
+// Create a new paragraph element
+const copyrightParagraph = document.createElement('p');
+
+// Set the content of the paragraph to the copyright notice
+copyrightParagraph.textContent = `© ${currentYear} Supreme Contracting. All Rights Reserved.`;
+
+// Append the paragraph to the footer
+footer.appendChild(copyrightParagraph);
 
 
 
