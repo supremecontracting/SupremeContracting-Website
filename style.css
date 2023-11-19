@@ -787,6 +787,17 @@ nav .mega-dropdown{
   .footer-col:nth-child(1), .footer-col:nth-child(2) {
     margin-bottom: 30px;
   }
+  .col-3 .col3-col {
+    padding: 60px;
+  }
+  .hero {
+    min-height: unset;
+    max-height: unset;
+    height: auto !important;
+    padding-top: 180px;
+    padding-bottom: 221px;
+  }
+  
 }
 
 @media screen and (max-width: 576px) {
@@ -808,8 +819,19 @@ nav .mega-dropdown{
   .footer-flex {
     padding-top: 45px;
   }
+  .col-3 .col3-col {
+    padding: 45px;
+  }
 }
 
 @media screen and (max-width: 420px) {
-  
+  .col-3 .col3-col {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .col-3 .col3-col {
+    padding: 20px;
+  }
 }
