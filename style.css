@@ -14,6 +14,9 @@
 .padding-bottom {
   padding-bottom: 115px;
 }
+.padding-top-big {
+  padding-top: 140px;
+}
 .pl90 {
   padding-left: 90px;
 }
@@ -25,7 +28,8 @@
   -webkit-box-sizing:border-box;
   box-sizing:border-box;
   margin:0;
-  padding:0
+  padding:0;
+  font-family: 'Roboto', sans-serif !important;
  }
  body{
   background:#fff;
@@ -33,7 +37,6 @@
   color:#fff
  }
 h1, h2, h3, h4, h5, h6, p, a, span {
-  font-family: 'Roboto', sans-serif !important;
   color: #2B2B2B;
 }
 h1 {
@@ -63,6 +66,9 @@ p, .eyebrow {
 }
 p:not(.hero p) {
   color: #2B2B2B;
+}
+button {
+  cursor: pointer;
 }
 .eyebrow {
   text-transform: uppercase;
@@ -126,6 +132,12 @@ p:not(.hero p) {
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
+  transition: all 0.3s ease-in-out;
+}
+.btn:hover {
+  background-color: var(--darkgray);
+  border-color: var(--darkgray);
+  color: #fff;
 }
 .btn-red {
   background-color: var(--red);
@@ -133,6 +145,10 @@ p:not(.hero p) {
 }
 .btn-transparent {
   background-color: transparent;
+}
+.btn-transparent:hover {
+  border-color: var(--red);
+  background-color: var(--red);
 }
 .btn-light {
   background-color: #fff;
@@ -334,6 +350,67 @@ p:not(.hero p) {
   border-radius: 50%;
 }
 
+/* contact */
+
+.contact-flex {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 90px;
+}
+
+.contact form {
+  position: relative;
+}
+
+.contact form:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-image: linear-gradient(315deg, rgba(0, 0, 0, 0.83) 0%, rgba(0, 0, 0, 0.83) 74%), url('/SupremeContracting-Website/img/hero-img.webp');
+}
+
+.contact form input, .contact form button, .contact form textarea {
+  position: relative;
+  z-index: 2;
+}
+
+.contact form textarea {
+  margin-top: 20px;
+  margin-bottom: 24.25px;
+  width: 100%;
+}
+
+.contact form input, .contact form textarea {
+  padding: 14px;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.contact input, .contact textarea {
+  background-color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  border-radius: 0;
+  width: 100%;
+}
+
+.contact form {
+  background-color: var(--darkgray);
+  padding: 45px;
+}
+
+.contact .form-group .form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-gap: 20px;
+}
+
 /* footer */
 
 footer {
@@ -419,14 +496,14 @@ footer h4 {
   color: #e5e5e5 !important;
 }
 .text-dark *:not(.btn, .text-red) {
-  color: #333;
+  color: var(--darkgray);
 }
 
 a{
  text-decoration:none;
 }
 #header a, .top-nav a {
-  color: #333 !important;
+  color: var(--darkgray) !important;
 }
 #header{
  background:#fff;
@@ -481,7 +558,7 @@ nav li a{
 
 nav li li a{
  float:none;
- color:#333;
+ color:var(--darkgray);
  display:block;
  padding:8px 10px;
  border-radius:3px;
@@ -543,7 +620,7 @@ nav .mega-dropdown{
  display:none
 }
 #menu-icon span{
- border:2px solid #333;
+ border:2px solid var(--darkgray);
  width:30px;
  margin-bottom:5px;
  display:block;
@@ -626,7 +703,7 @@ nav .mega-dropdown{
  }
   #header nav a:hover{
      background:#fff;
-     color:#333;
+     color:var(--darkgray);
      border-radius:3px
  }
   #header nav ul li li a:before{
