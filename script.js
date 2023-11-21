@@ -106,43 +106,7 @@ const slides = document.querySelector('.slides');
 
     // mobile touch sliding
 
-    slides.addEventListener('touchstart', handleTouchStart);
-slides.addEventListener('touchmove', handleTouchMove);
-
-let touchStartX = 0;
-
-function handleTouchStart(event) {
-    touchStartX = event.touches[0].clientX;
-}
-
-function handleTouchMove(event) {
-    if (!isHovered) {
-        const touchEndX = event.touches[0].clientX;
-        const deltaX = touchEndX - touchStartX;
-
-        slides.style.transition = 'none'; // Disable transition during touch sliding
-        slides.style.transform = `translateX(calc(${currentIndex * -100}% + ${deltaX}px))`;
-    }
-}
-
-slides.addEventListener('touchend', handleTouchEnd);
-
-function handleTouchEnd(event) {
-    slides.style.transition = ''; // Re-enable transition after touch sliding
-
-    const touchDeltaX = touchStartX - event.changedTouches[0].clientX;
-
-    // Determine if the touch distance is significant and the direction is left or right
-    if (Math.abs(touchDeltaX) > slidesContainer.offsetWidth / 4) {
-        currentIndex += touchDeltaX > 0 ? 1 : -1;
-        currentIndex = Math.max(0, Math.min(currentIndex, dots.length - 1));
-    }
-
-    slides.style.transform = `translateX(${currentIndex * -100}%)`;
-
-    updateDots();
-    resetInterval();
-}
+    
 
 // desktop click sliding
 
