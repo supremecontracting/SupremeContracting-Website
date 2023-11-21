@@ -43,5 +43,57 @@ copyrightParagraph.textContent = `© ${currentYear} Supreme Contracting. All Rig
 // Append the paragraph to the footer
 footer.appendChild(copyrightParagraph);
 
+// slider
+
+const slides = document.querySelector('.slides');
+    const dots = document.querySelectorAll('.dot');
+    const quotes = document.querySelectorAll('.quote');
+    let currentIndex = 0;
+    let isHovered = false;
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            setActiveSlide(index);
+        });
+    });
+
+    quotes.forEach((quote) => {
+        quote.addEventListener('mouseover', () => {
+            isHovered = true;
+        });
+
+        quote.addEventListener('mouseout', () => {
+            isHovered = false;
+        });
+    });
+
+    function setActiveSlide(index) {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+
+        updateDots();
+    }
+
+    function updateDots() {
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+
+        slides.querySelectorAll('.slide').forEach((slide, i) => {
+            slide.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        if (!isHovered) {
+            currentIndex = (currentIndex + 1) % dots.length;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            updateDots();
+        }
+    }
+
+    setInterval(nextSlide, 3000);
+
 
 
