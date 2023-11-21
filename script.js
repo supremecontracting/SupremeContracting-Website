@@ -104,6 +104,37 @@ const slides = document.querySelector('.slides');
     // Initial interval setup
     intervalId = setInterval(nextSlide, 5000);
 
+    // mobile touch sliding
+
+    slides.addEventListener('touchstart', handleTouchStart);
+slides.addEventListener('touchmove', handleTouchMove);
+
+function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchMove(event) {
+    if (!isHovered) {
+        const touchEndX = event.touches[0].clientX;
+        const deltaX = touchEndX - touchStartX;
+
+        if (Math.abs(deltaX) > 50) {
+            if (deltaX < 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+
+            // Prevent default to avoid scrolling the page
+            event.preventDefault();
+        }
+    }
+}
+
+// desktop click sliding
+
+
+
     // hide video controls and styling
     
     var video = document.getElementById("background-video");
