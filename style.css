@@ -54,6 +54,30 @@
   font-size:16px;
   color:#fff
  }
+
+ body, html {
+  overflow-x: hidden;
+ }
+
+ .fullscreen-video-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 h1, h2, h3, h4, h5, h6, p, a, span {
   color: #2B2B2B;
 }
@@ -136,10 +160,7 @@ img {
   max-height: 900px;
   min-height: 820px;
   position: relative;
-  background-image: url(./img/hero-img.webp);
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center center;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -616,6 +637,10 @@ img {
   grid-gap: 20px;
 }
 
+/* roofing page */
+
+
+
 /* footer */
 
 footer {
@@ -624,7 +649,7 @@ footer {
 }
 
 footer .logo-col {
-  max-width: 250px;
+  max-width: 200px;
 }
 
 .footer-flex {
@@ -695,11 +720,11 @@ footer h4 {
   top: 0 !important;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
   border-top: none !important;
-  transition: all 0.5s ease;
+  transition: top 0.5s ease;
 }
 .topnav-scrolling {
   transition: all 0.5s ease;
-  top: -40px !important;
+  top: -25px;
 }
 
 .text-light *:not(.btn, .text-red) {
@@ -719,11 +744,11 @@ a{
  background:#fff;
  width:100%;
  position:relative;
-  padding: 20px 0;
+  padding: 10px 0;
   position: fixed;
   top: 38.5px;
   box-shadow: none;
-  border-top: 0.1px solid #d1d1d1;
+  border-top: 0.1px solid #e0e0e0;
   z-index: 999999999;
 }
 .header-flex {
@@ -1032,6 +1057,17 @@ nav .mega-dropdown{
 
   .quote {
     font-size: 26px;
+  }
+
+  .hero video {
+    display: none !important;
+  }
+
+  .hero {
+    background-image: url(./img/hero-img.webp);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
   }
   
 }

@@ -12,7 +12,7 @@ $(this).toggleClass("active");
 let scrollPosition = window.scrollY;
 const header = document.querySelector("#header");
 const topnav = document.querySelector(".top-nav");
-const headerShrink = 1;
+const headerShrink = 45;
 
 window.addEventListener("scroll", function () {
     scrollPosition = window.scrollY;
@@ -96,4 +96,8 @@ const slides = document.querySelector('.slides');
     setInterval(nextSlide, 3000);
 
 
+    // hide video controls and styling
+    
+    var video = document.getElementById("background-video");
+      video.removeAttribute("controls");
 
