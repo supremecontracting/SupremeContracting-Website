@@ -43,77 +43,60 @@ copyrightParagraph.textContent = `© ${currentYear} Supreme Contracting. All Rig
 // Append the paragraph to the footer
 footer.appendChild(copyrightParagraph);
 
-// slider
+document.addEventListener("DOMContentLoaded", function () {
+    // Get all roofing items and sidebar links
+    var roofingItems = document.querySelectorAll('.roofing-item');
+    var sidebarLinks = document.querySelectorAll('.roofing-sidebar a');
 
-
-
-const slides = document.querySelector('.slides');
-    const dots = document.querySelectorAll('.dot');
-    const quotes = document.querySelectorAll('.quote');
-    let currentIndex = 0;
-    let isHovered = false;
-
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            setActiveSlide(index);
-            resetInterval();
-        });
-    });
-
-    quotes.forEach((quote) => {
-        quote.addEventListener('mouseover', () => {
-            isHovered = true;
-        });
-
-        quote.addEventListener('mouseout', () => {
-            isHovered = false;
-        });
-    });
-
-    function setActiveSlide(index) {
-        slides.style.transform = `translateX(-${index * 100}%)`;
-        currentIndex = index;
-
-        updateDots();
+    // Function to check if an element is in the viewport
+    function isInViewport(element) {
+        var rect = element.getBoundingClientRect();
+        return (
+            rect.top <= window.innerHeight / 2 &&
+            rect.bottom >= window.innerHeight / 2
+        );
     }
 
-    function updateDots() {
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentIndex);
+    // Function to add or remove the "active" class based on the viewport
+    function updateActiveLink() {
+        var activeLinkId = null;
+
+        roofingItems.forEach(function (item, index) {
+            var link = sidebarLinks[index];
+
+            if (isInViewport(item)) {
+                activeLinkId = link.getAttribute('href');
+            }
         });
 
-        slides.querySelectorAll('.slide').forEach((slide, i) => {
-            slide.classList.toggle('active', i === currentIndex);
+        // Remove "active" class from all links
+        sidebarLinks.forEach(function (link) {
+            link.classList.remove('active-sidebar-link');
         });
-    }
 
-    function nextSlide() {
-        if (!isHovered) {
-            currentIndex = (currentIndex + 1) % dots.length;
-            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-            updateDots();
+        // Add "active" class to the link with the corresponding ID
+        if (activeLinkId) {
+            document.querySelector('a[href="' + activeLinkId + '"]').classList.add('active-sidebar-link');
         }
     }
 
-    function resetInterval() {
-        clearInterval(intervalId);
-        intervalId = setInterval(nextSlide, 5000);
-    }
+    // Add click event listener to update the "active" class when a link is clicked
+    sidebarLinks.forEach(function (link) {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            var targetId = link.getAttribute('href');
+            document.querySelector(targetId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 
-    // Initial interval setup
-    intervalId = setInterval(nextSlide, 5000);
+    // Add scroll event listener to update the "active" class on scroll
+    window.addEventListener('scroll', function () {
+        updateActiveLink(); // Update active link on scroll
+    });
 
-    // mobile touch sliding
-
-    
-
-// desktop click sliding
-
-
-
-    // hide video controls and styling
-    
-    var video = document.getElementById("background-video");
-      video.removeAttribute("controls");
+    // Call the function initially to set the "active" class on page load
+    updateActiveLink();
+});
 

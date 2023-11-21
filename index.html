@@ -290,8 +290,77 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
     <script type="text/javascript" src="script.js"></script>
+    <script>
+      
+    // slider
     
+    const slides = document.querySelector('.slides');
+    const dots = document.querySelectorAll('.dot');
+    const quotes = document.querySelectorAll('.quote');
+    let currentIndex = 0;
+    let isHovered = false;
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            setActiveSlide(index);
+            resetInterval();
+        });
+    });
+
+    quotes.forEach((quote) => {
+        quote.addEventListener('mouseover', () => {
+            isHovered = true;
+        });
+
+        quote.addEventListener('mouseout', () => {
+            isHovered = false;
+        });
+    });
+
+    function setActiveSlide(index) {
+        slides.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+
+        updateDots();
+    }
+
+    function updateDots() {
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+
+        slides.querySelectorAll('.slide').forEach((slide, i) => {
+            slide.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        if (!isHovered) {
+            currentIndex = (currentIndex + 1) % dots.length;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            updateDots();
+        }
+    }
+
+    function resetInterval() {
+        clearInterval(intervalId);
+        intervalId = setInterval(nextSlide, 5000);
+    }
+
+    // Initial interval setup
+    intervalId = setInterval(nextSlide, 5000);
+
+    // hide video controls and styling
+    
+    var video = document.getElementById("background-video");
+      video.removeAttribute("controls");
+
+
+/* scrolling menu links */
+
+
+    </script>
 </body>
 </html>
