@@ -45,6 +45,8 @@ footer.appendChild(copyrightParagraph);
 
 // slider
 
+
+
 const slides = document.querySelector('.slides');
     const dots = document.querySelectorAll('.dot');
     const quotes = document.querySelectorAll('.quote');
@@ -54,6 +56,7 @@ const slides = document.querySelector('.slides');
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             setActiveSlide(index);
+            resetInterval();
         });
     });
 
@@ -93,8 +96,13 @@ const slides = document.querySelector('.slides');
         }
     }
 
-    setInterval(nextSlide, 3000);
+    function resetInterval() {
+        clearInterval(intervalId);
+        intervalId = setInterval(nextSlide, 5000);
+    }
 
+    // Initial interval setup
+    intervalId = setInterval(nextSlide, 5000);
 
     // hide video controls and styling
     

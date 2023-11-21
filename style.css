@@ -515,9 +515,25 @@ img {
   overflow: hidden;
 }
 
+
 .slides {
   display: flex;
   transition: all 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slide:not(.slide.active) {
+  opacity: 0;
+  transition: all 0.618s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1 !important;
+  transition: all 0.618s ease-in-out;
 }
 
 .slide {
