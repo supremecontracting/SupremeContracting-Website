@@ -127,12 +127,14 @@ function handleTouchMove(event) {
 
 slides.addEventListener('touchend', handleTouchEnd);
 
-function handleTouchEnd() {
+function handleTouchEnd(event) {
     slides.style.transition = ''; // Re-enable transition after touch sliding
 
+    const touchDeltaX = touchStartX - event.changedTouches[0].clientX;
+
     // Determine if the touch distance is significant and the direction is left or right
-    if (Math.abs(touchStartX - event.changedTouches[0].clientX) > slidesContainer.offsetWidth / 4) {
-        currentIndex += touchStartX > event.changedTouches[0].clientX ? 1 : -1;
+    if (Math.abs(touchDeltaX) > slidesContainer.offsetWidth / 4) {
+        currentIndex += touchDeltaX > 0 ? 1 : -1;
         currentIndex = Math.max(0, Math.min(currentIndex, dots.length - 1));
     }
 
