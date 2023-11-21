@@ -50,6 +50,7 @@ const slides = document.querySelector('.slides');
     const quotes = document.querySelectorAll('.quote');
     let currentIndex = 0;
     let isHovered = false;
+    let touchStartX = 0;
 
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
@@ -66,6 +67,32 @@ const slides = document.querySelector('.slides');
             isHovered = false;
         });
     });
+
+    slides.addEventListener('touchstart', handleTouchStart);
+    slides.addEventListener('touchmove', handleTouchMove);
+
+    function handleTouchStart(event) {
+        touchStartX = event.touches[0].clientX;
+    }
+
+    function handleTouchMove(event) {
+        if (!isHovered) {
+            const touchEndX = event.touches[0].clientX;
+            const deltaX = touchEndX - touchStartX;
+
+            // Set a threshold to determine a swipe
+            if (Math.abs(deltaX) > 50) {
+                // Swipe left
+                if (deltaX < 0) {
+                    nextSlide();
+                }
+                // Swipe right
+                else {
+                    prevSlide();
+                }
+            }
+        }
+    }
 
     function setActiveSlide(index) {
         slides.style.transform = `translateX(-${index * 100}%)`;
@@ -93,7 +120,16 @@ const slides = document.querySelector('.slides');
         }
     }
 
-    setInterval(nextSlide, 3000);
+    function prevSlide() {
+        if (!isHovered) {
+            currentIndex = (currentIndex - 1 + dots.length) % dots.length;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            updateDots();
+        }
+    }
+
+    setInterval(nextSlide, 5000);
 
 
 
