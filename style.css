@@ -947,7 +947,9 @@ nav .mega-dropdown{
 /* queries */
 
 @media screen and (max-width: 1200px) {
-  
+  .quote {
+    font-size: 30px;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -1027,6 +1029,10 @@ nav .mega-dropdown{
     padding-top: 180px;
     padding-bottom: 221px;
   }
+
+  .quote {
+    font-size: 26px;
+  }
   
 }
 
@@ -1048,6 +1054,10 @@ nav .mega-dropdown{
   }
   .footer-flex {
     padding-top: 45px;
+  }
+
+  .quote {
+    font-size: 20px;
   }
   .hero .btn-group {
     flex-flow: column;
