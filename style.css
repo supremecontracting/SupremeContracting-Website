@@ -238,7 +238,6 @@ img {
   height: auto;
   min-height: 500px;
   position: relative;
-  background-image: url(./img/hero-img.webp);
   background-size: cover;
   background-position: center center;
   display: flex;
@@ -263,6 +262,10 @@ img {
   margin-top: 140px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.roofing-subhero {
+  background-image: url(./img/house.webp);
 }
 
 /* about */
@@ -733,7 +736,7 @@ img {
   border-top: 1px solid #d1d1d1;
   background-color: transparent;
   color: transparent;
-  margin-top: 54px;
+  margin-top: 65px;
 }
 
 .roofing-sidebar div a:last-of-type {
@@ -1217,7 +1220,6 @@ nav .mega-dropdown{
 
   .hero {
     background-image: url(./img/hero-img.webp);
-  background-attachment: fixed;
   background-size: cover;
   background-position: center center;
   }
