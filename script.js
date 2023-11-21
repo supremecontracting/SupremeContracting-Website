@@ -109,6 +109,8 @@ const slides = document.querySelector('.slides');
     slides.addEventListener('touchstart', handleTouchStart);
 slides.addEventListener('touchmove', handleTouchMove);
 
+let touchStartX = 0;
+
 function handleTouchStart(event) {
     touchStartX = event.touches[0].clientX;
 }
@@ -118,17 +120,26 @@ function handleTouchMove(event) {
         const touchEndX = event.touches[0].clientX;
         const deltaX = touchEndX - touchStartX;
 
-        if (Math.abs(deltaX) > 50) {
-            if (deltaX < 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
-
-            // Prevent default to avoid scrolling the page
-            event.preventDefault();
-        }
+        slides.style.transition = 'none'; // Disable transition during touch sliding
+        slides.style.transform = `translateX(calc(${currentIndex * -100}% + ${deltaX}px))`;
     }
+}
+
+slides.addEventListener('touchend', handleTouchEnd);
+
+function handleTouchEnd() {
+    slides.style.transition = ''; // Re-enable transition after touch sliding
+
+    // Determine if the touch distance is significant and the direction is left or right
+    if (Math.abs(touchStartX - event.changedTouches[0].clientX) > slidesContainer.offsetWidth / 4) {
+        currentIndex += touchStartX > event.changedTouches[0].clientX ? 1 : -1;
+        currentIndex = Math.max(0, Math.min(currentIndex, dots.length - 1));
+    }
+
+    slides.style.transform = `translateX(${currentIndex * -100}%)`;
+
+    updateDots();
+    resetInterval();
 }
 
 // desktop click sliding
