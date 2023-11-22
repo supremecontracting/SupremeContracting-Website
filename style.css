@@ -515,7 +515,7 @@ img {
 .values .col3-col {
   background-color: #fff;
   padding: 30px;
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.21);
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 2;
 }
@@ -734,6 +734,10 @@ img {
 
 /* roofing page */
 
+.roofing-content-container {
+  background-color: var(--lightgray);
+}
+
 .roofing-sidebar {
   width: 30%;
 }
@@ -749,7 +753,7 @@ img {
   display: flex;
   flex-flow: column;
   background-color: #fff;
-  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.21);
+  box-shadow: 0 14px 45px rgba(0, 0, 0, 0.113);
   padding: 30px;
 }
 
