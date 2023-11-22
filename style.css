@@ -134,10 +134,7 @@ button {
   margin-right: auto;
 }
 
-section {
-  position: relative;
-  z-index: 1;
-}
+
 
 .row-flex {
   display: flex;
