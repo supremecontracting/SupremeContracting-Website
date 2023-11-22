@@ -212,17 +212,26 @@ img {
   margin-top: 30px;
 }
 .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   border: 2px solid var(--red);
   padding: 14px 20px;
   min-width: 200px;
+  max-width: 230px;
+  max-height: 50.4px !important;
   text-align: center;
   text-transform: uppercase;
   font-weight: 900;
+  position: relative;
+  overflow: hidden; 
   transition: all 0.3s ease;
 }
 .btn:hover {
   background-color: var(--darkgray);
   border-color: var(--darkgray);
+  padding-right: 30px; 
   color: #fff;
 }
 .btn-red {
@@ -241,6 +250,22 @@ img {
   background-color: #fff;
   color: #2B2B2B;
   border: 2px solid #fff;
+}
+
+
+
+.arrow-span ion-icon {
+  transform: translateX(-10px);
+  opacity: 0;
+  font-size: 0;
+  color: #fff !important;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.btn:hover .arrow-span ion-icon {
+  font-size: 22px;
+  opacity: 1;
+  transform: translateX(20px);
 }
 
 /* subhero */
