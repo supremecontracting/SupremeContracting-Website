@@ -22,10 +22,10 @@
   padding-bottom: 100px;
 }
 .padding-top-big {
-  padding-top: 160px;
+  padding-top: 140px;
 }
 .padding-bottom-big {
-  padding-bottom: 160px;
+  padding-bottom: 140px;
 }
 .pl90 {
   padding-left: 90px;
@@ -123,6 +123,10 @@ button {
 .bg-lightgray {
   background-color: var(--lightgray);
 }
+.z0 {
+  position: relative;
+  z-index: 0;
+}
 .eyebrow {
   text-transform: uppercase;
   font-weight: 400;
@@ -142,7 +146,6 @@ button {
 
 .grid-col2 {
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
   grid-gap: 90px;
 }
 
@@ -361,6 +364,8 @@ img {
   opacity: .9;
   z-index: -1;
 }
+
+
 
 /* services */
 .services h3 {
@@ -736,9 +741,7 @@ img {
 
 /* roofing page */
 
-.roofing-content-container {
-  background-color: var(--lightgray);
-}
+
 
 .roofing-sidebar {
   width: 30%;
@@ -841,11 +844,15 @@ img {
 
 /* asphalt shingles page */
 
-.shingles ul {
+.shingles-subhero {
+  background-image: url(./img/shingle-roof.webp);
+}
+
+.roof-type-grid ul {
   padding-top: 10px;
 }
 
-.shingles ul li {
+.roof-type-grid ul li {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   list-style-type: none;
@@ -854,57 +861,67 @@ img {
   margin-bottom: 10px;
 }
 
-.shingles img {
-  height: 400px;
-  object-fit: cover;
+.shingles .img-right.good-shingles.img-container {
+  background: url(./img/good-shingles.webp);
+  background-size: cover;
+  background-position: center center;
+}
+.shingles .img-left.better-shingles.img-container {
+  background: url(./img/better-shingles.webp);
+  background-size: cover;
+  background-position: center center;
+}
+.shingles .img-right.supreme-shingles.img-container {
+  background: url(./img/best-shingles.webp);
+  background-size: cover;
+  background-position: center center;
 }
 
-.shingles .img-container {
-  height: 400px;
-}
+
 
 /*
-.shingles .img-right .img-container {
+.roof-type-grid .img-right .img-container {
   background: url(img/roof.webp);
   background-size: cover;
   background-position: center center;
 }
-.shingles .img-left .img-container {
+.roof-type-grid .img-left .img-container {
   background: url(img/pipe.webp);
   background-size: cover;
   background-position: center center;
 }
 */
 
-.shingles ion-icon {
+.roof-type-grid ion-icon {
   font-size: 24px !important;
   color: var(--red);
 }
 
-.shingles ul li div {
+.roof-type-grid ul li div {
   margin-left: 10px;
 }
 
-.shingles h3 {
+.roof-type-grid h3 {
   font-size: 36px;
 }
 
-.shingles .grid-col2 {
+.roof-type-grid .grid-col2 {
   display: grid;
   grid-template-columns: repeat(2, 2fr);
-  align-items: center;
   grid-gap: 90px;
 }
 
-.shingles .grid-col2:not(.shingles .grid-col2:first-of-type) {
-  padding-top: 72px;
+/*
+.roof-type-grid .grid-col2:not(.roof-type-grid .grid-col2:first-of-type) {
+  padding-top: 100px;
 }
 
-.shingles .grid-col2:nth-child(odd) .img-container {
+.roof-type-grid .grid-col2:nth-child(odd) .img-container {
   order: 1;
 }
+*/
 
-.shingles .img-left.img-container:before {
+.roof-type-grid .img-left.img-container:before {
   content: '';
   background: url(./img/good.webp);
   display: block;
@@ -918,7 +935,7 @@ img {
   right: 20px;
   z-index: -1;
 }
-.shingles .img-left.img-container:after {
+.roof-type-grid .img-left.img-container:after {
   content: '';
   width: 100%;
   height: 100%;
@@ -930,7 +947,7 @@ img {
   z-index: -1;
 }
 
-.shingles .img-right.img-container:before {
+.roof-type-grid .img-right.img-container:before {
   content: '';
   background: url(./img/good.webp);
   display: block;
@@ -944,7 +961,7 @@ img {
   right: -20px;
   z-index: -1;
 }
-.shingles .img-right.img-container:after {
+.roof-type-grid .img-right.img-container:after {
   content: '';
   width: 100%;
   height: 100%;
@@ -956,13 +973,88 @@ img {
   z-index: -1;
 }
 
-.shingles .col3-col div:not(li div) {
-  padding: 30px;
-}
 
-.shingles h3 {
+
+.roof-type-grid h3 {
   padding-bottom: 8.1px;
 }
+
+/* flat roof page */
+
+.flat-roof-subhero {
+  background-image: url(./img/house.webp);
+}
+
+.line-connectors-top, .line-connectors-bottom {
+  display: flex;
+  max-width: 62%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.line-connectors-top div, .line-connectors-bottom div {
+height: 80px;
+width: 25%;
+}
+
+.line-connectors-top {
+  margin-top: 20px;
+}
+
+.flex-reverse {
+  flex-flow: row-reverse;
+}
+
+.line-connectors-top .border-right {
+  border-right: 1px solid var(--red);
+}
+
+.line-connectors-bottom .border-top.border-left {
+  border-left: 1px solid var(--red);
+  border-top: 1px solid var(--red)
+}
+
+.line-connectors-bottom .border-top {
+  border-top: 1px solid var(--red)
+}
+
+.line-connectors-bottom .border-right {
+  border-right: 1px solid var(--red);
+}
+
+.line-connectors-top .border-left {
+  border-left: 1px solid var(--red);
+}
+
+.flat-roofs .img-right.flat-roof-tpo.img-container {
+  background: url(./img/flat-tpo.webp);
+  background-size: cover;
+  background-position: center center;
+}
+.flat-roofs .img-left.flat-roof-epdm.img-container {
+  background: url(./img/flat-epdm.webp);
+  background-size: cover;
+  background-position: center center;
+}
+.flat-roofs .img-right.flat-roof-torch.img-container {
+  background: url(./img/flat-torch.webp);
+  background-size: cover;
+  background-position: center center;
+}
+.flat-roofs .img-left.flat-roof-selfadhere.img-container {
+  background: url(./img/flat-selfadhere.webp);
+  background-size: cover;
+  background-position: center center;
+}
+
+
+
+.roof-type-grid .col-img-right .img-container {
+  order: 1 !important;
+}
+
+
+
 
 
 /* footer */
@@ -1044,10 +1136,10 @@ footer h4 {
   top: 0 !important;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
   border-top: none !important;
-  transition: top 0.5s ease;
+  transition: top 0.3s ease;
 }
 .topnav-scrolling {
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
   top: -25px;
 }
 
@@ -1056,6 +1148,10 @@ footer h4 {
 }
 .text-dark *:not(.btn, .text-red, ion-icon) {
   color: var(--darkgray);
+}
+
+.hide {
+  display: none !important;
 }
 
 a{
@@ -1299,13 +1395,7 @@ nav .mega-dropdown{
   .quote {
     font-size: 30px;
   }
-  .shingles .col-3 {
-    grid-template-columns: repeat(1, 1fr);
-  }
   
-  .shingles .col3-col div:not(li div) {
-    padding: 20px;
-  }
   .shingles h3 {
     margin-bottom: 5px;
   }
