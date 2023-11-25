@@ -598,6 +598,7 @@ img {
 .slider-container {
   position: relative;
   width: 100%;
+  padding-bottom: 60px;
   overflow: hidden;
 }
 
@@ -632,7 +633,7 @@ img {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  padding-bottom: 54px;
+  padding-bottom: 20px;
   font-size: 36px;
   font-weight: 900;
   line-height: 1.4;
@@ -1053,9 +1054,32 @@ width: 25%;
   order: 1 !important;
 }
 
+/* specialty roofs page */
 
+.specialty-roof-subhero {
+  background-image: url(./img/house.webp);
+}
 
-
+.specialty-roofs .img-right.specialty-handsplit.img-container {
+  background: url(./img/speciality-handsplit-cedar.webp);
+  background-size: cover;
+  background-position: center center;
+}
+.specialty-roofs .img-left.specialty-tapersawn.img-container {
+  background: url(./img/specialty-tapersawn-cedar.webp);
+  background-size: cover;
+  background-position: center center;
+}
+.specialty-roofs .img-right.specialty-slate.img-container {
+  background: url(./img/specialty-synthetic-slate.webp);
+  background-size: cover;
+  background-position: center center;
+}
+.specialty-roofs .img-left.specialty-natural.img-container {
+  background: url(./img/specialty-natural-slate.webp);
+  background-size: cover;
+  background-position: center center;
+}
 
 /* footer */
 
@@ -1140,7 +1164,7 @@ footer h4 {
   border-top: none !important;
 }
 .topnav-scrolling {
-  top: -25px;
+  top: -54px;
 }
 
 .top-nav ion-icon {
