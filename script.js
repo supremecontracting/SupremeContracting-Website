@@ -100,3 +100,15 @@ document.addEventListener("DOMContentLoaded", function () {
     updateActiveLink();
 });
 
+// animate transitions only after loaded
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Add the 'loaded' class to the body after the DOM has loaded
+    document.body.classList.add('loaded');
+
+    // Introduce a 0.3s delay before allowing transitions to fire
+    setTimeout(function() {
+      document.body.classList.add('allow-transitions');
+    }, 300);
+    
+  });

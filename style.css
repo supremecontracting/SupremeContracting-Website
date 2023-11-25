@@ -1120,7 +1120,8 @@ footer h4 {
   top: 0;
   left: 0;
   background-color: #fff;
-  padding: 10px 0;
+  padding: 15px 0;
+  transition: all 0.3s ease;
   z-index: 99999;
 }
 .top-nav-flex {
@@ -1136,11 +1137,20 @@ footer h4 {
   top: 0 !important;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
   border-top: none !important;
-  transition: top 0.3s ease;
 }
 .topnav-scrolling {
-  transition: all 0.3s ease;
   top: -25px;
+}
+
+.top-nav ion-icon {
+  color: var(--red);
+  font-size: 24px;
+}
+
+.top-nav a {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
 }
 
 .text-light *:not(.btn, .text-red) {
@@ -1166,8 +1176,9 @@ a{
  position:relative;
   padding: 10px 0;
   position: fixed;
-  top: 38.5px;
+  top: 54px;
   box-shadow: none;
+  transition: top 0.3s ease;
   border-top: 0.1px solid #e5e5e5;
   z-index: 999999999;
 }
@@ -1402,9 +1413,16 @@ nav .mega-dropdown{
 }
 
 @media screen and (max-width: 1080px) {
+  .grid-col2, .service-item {
+    grid-gap: 60px !important;
+  }
+  
+}
+
+@media screen and (max-width: 992px) {
+
   .wrap-grid-1080 {
     grid-template-columns: repeat(1, 1fr) !important;
-    grid-gap: 72px !important;
   }
   .wrap-grid-1080 .img-container {
     order: unset !important;
@@ -1420,9 +1438,7 @@ nav .mega-dropdown{
     bottom: -20px;
     right: -20px !important;
   }
-}
 
-@media screen and (max-width: 992px) {
   .col-3, .service-item {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 60px;
@@ -1448,12 +1464,18 @@ nav .mega-dropdown{
     width: 100%;
   }
   .contact form {
-    margin-top: 20px;
+    margin-top: 45px;
   }
-  .service-item:nth-child(even) .img-container {
+  .service-item:nth-child(even) .img-container, .grid-col2:nth-child(odd) .img-container {
     order: unset !important;
   }
-  .service-item .img-container {
+  .line-connectors-top, .line-connectors-bottom {
+    display: none !important;
+  }
+  .grid-col2:not(.grid-col2:last-of-type) {
+    padding-bottom: 100px;
+  }
+  .img-container {
     height: 300px;
   }
   .col-3 .col3-col {
