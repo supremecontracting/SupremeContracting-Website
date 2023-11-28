@@ -41,6 +41,10 @@
 .margin-bottom {
   margin-bottom: 115px;
 }
+
+.nav-spacing {
+  padding-top: 240px;
+}
 *, *:before, *:after {
   -moz-box-sizing:border-box;
   -webkit-box-sizing:border-box;
@@ -277,7 +281,7 @@ img {
 
 .global-subhero {
   height: auto;
-  min-height: 500px;
+  min-height: 540px;
   position: relative;
   background-size: cover;
   background-position: center center;
@@ -365,7 +369,16 @@ img {
   z-index: -1;
 }
 
+/* about page */
 
+.about-centered .max-width {
+  max-width: 1000px;
+}
+
+.about-centered img {
+  max-height: 275px;
+  object-fit: cover;
+}
 
 /* services */
 .services h3 {
@@ -1103,6 +1116,30 @@ footer .logo-col {
   flex-flow: column;
 }
 
+.logo-col a {
+  font-size: 18px;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+}
+
+.logo-col p {
+  font-size: 18px;
+  font-style: italic;
+  padding-top: 10px;
+}
+
+.logo-col ion-icon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.logo-col div {
+  padding-top: 30px;
+  display: flex;
+  flex-flow: column;
+}
+
 .footer-col a {
   margin-bottom: 9px;
   transition: all 0.3s ease;
@@ -1146,7 +1183,7 @@ footer h4 {
   left: 0;
   background-color: #fff;
   padding: 15px 0;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   z-index: 99999;
 }
 .top-nav-flex {
@@ -1159,17 +1196,30 @@ footer h4 {
 .nav-scrolling {
   padding-top: 5px !important;
   padding-bottom: 5px !important;
-  top: 0 !important;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+  /*
+  top: 0 !important;
   border-top: none !important;
+  */
 }
+
+.top-nav p {
+  font-size: 18px;
+  font-style: italic;
+  color: #555 !important;
+}
+/*
 .topnav-scrolling {
   top: -54px;
 }
+*/
 
 .top-nav ion-icon {
-  color: var(--red);
   font-size: 24px;
+}
+
+ion-icon {
+  color: var(--red);
 }
 
 .top-nav a {
@@ -1203,7 +1253,7 @@ a{
   position: fixed;
   top: 54px;
   box-shadow: none;
-  transition: top 0.3s ease;
+  transition: top 0.4s ease, padding 0.4s ease;
   border-top: 0.1px solid #e5e5e5;
   z-index: 999999999;
 }

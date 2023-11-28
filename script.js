@@ -21,11 +21,13 @@ window.addEventListener("scroll", function () {
     } else {
         header.classList.remove("nav-scrolling");
     }
+    /*
     if (scrollPosition >= headerShrink) {
         topnav.classList.add("topnav-scrolling");
     } else {
         topnav.classList.remove("topnav-scrolling");
     }
+    */
 });
 
 // Get the current year
@@ -104,4 +106,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add('loaded');
+  });
+
+  let lastScrollTop = 0;
+
+  window.addEventListener("scroll", function() {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop > 45) {
+      // Only apply the effect when scrolled down by at least 45px
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down, hide the top navigation
+        document.querySelector(".top-nav").style = "top: -54px;";
+      } else {
+        // Scrolling up, reveal the top navigation
+        document.querySelector(".top-nav").style = "top: 0;";
+      }
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down, hide the top navigation
+        document.getElementById("header").style = "top: 0; border-color: transparent !important;";
+      } else {
+        // Scrolling up, reveal the top navigation
+        document.getElementById("header").style = "top: 53.9px;";
+      }
+    }
+
+    lastScrollTop = scrollTop;
   });
