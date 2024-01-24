@@ -48,7 +48,7 @@ footer.appendChild(copyrightParagraph);
 document.addEventListener("DOMContentLoaded", function () {
     // Get all roofing items and sidebar links
     var roofingItems = document.querySelectorAll('.roofing-item');
-    var sidebarLinks = document.querySelectorAll('.roofing-sidebar a');
+    var sidebarLinks = document.querySelectorAll('.scrolling-sidebar a');
 
     // Function to check if an element is in the viewport
     function isInViewport(element) {
