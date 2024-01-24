@@ -960,6 +960,85 @@ img {
   z-index: -1;
 }
 
+/* gutters and accordions */ 
+
+.accordion-container {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 10px;
+}
+
+.accordion {
+  cursor: pointer;
+  user-select: none;
+  width: 220px;
+  margin-bottom: 10px;
+}
+
+.accordion-title {
+  margin: 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-weight: 500;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.accordion.is-open .accordion-content {
+  overflow: visible !important;
+  margin: 15px 0;
+}
+
+.accordion-content ul li {
+  list-style-type: none;
+}
+
+.accordion.is-open .accordion-title {
+  border-color: var(--red);
+}
+
+.accordion.is-open .accordion-title span {
+  color: var(--red);
+
+}
+
+.accordion-title, .accordion-title * {
+  transition: all 0.3s ease;
+}
+
+.accordion.is-open .arrow {
+  border-top-color: var(--red);
+}
+
+.accordion-content p, .accordion-content ul li {
+  margin-bottom: 5px;
+}
+
+.accordion .arrow {
+  width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 8px solid #000; /* Adjust color as needed */
+        display: inline-block;
+        transition: all 0.3s ease;
+}
+
+.gutters .btn-topspacing {
+  margin-top: 15px;
+}
+
 
 /* asphalt shingles page */
 
