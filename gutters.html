@@ -378,14 +378,19 @@
                     toggleAccordion(accordionContent, arrow);
                 };
             });
+    
+            // Additional click event listeners for accordion contents
+            accordionContents.forEach(content => {
+                content.onclick = function () {
+                    // Close the accordion when its content is clicked
+                    closeAllAccordions();
+                };
+            });
         });
     </script>
-    
-    
-    
-    
-    
     
       <script type="text/javascript" src="script.js"></script>
       </body>
       </html>
+
+      
