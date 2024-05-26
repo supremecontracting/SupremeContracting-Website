@@ -1677,8 +1677,6 @@ nav .mega-dropdown{
 
 .lightbox-arrow {
   position: absolute;
-  top: 60%;
-  transform: translateY(-50%);
   font-size: 45px;
   font-weight: 900;
   border-radius: 50%;
