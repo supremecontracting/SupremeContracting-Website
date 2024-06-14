@@ -1537,17 +1537,17 @@ nav li li{
 nav .dropdown ul{
   position:absolute;
   left:0;
-  top: 30px !important;
+  top: 27px !important;
   top:100%;
   background:#fff;
   box-shadow: 0 5px 24px rgba(0, 0, 0, 0.1);
-  padding:15px 0 10px 0;
+  padding:15px 0 10px 15px;
 }
 nav .dropdown li{
  white-space:nowrap
 }
 nav .dropdown li a{
- padding:10px 20px;
+ padding:10px 0px;
  font-size:14px;
  min-width:200px
 }
