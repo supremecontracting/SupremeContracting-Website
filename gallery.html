@@ -132,7 +132,7 @@
               <img class="lightbox-img" id="lightboxImage">
               <div class="lightbox-arrow prev" id="prevArrow">&#8249;</div>
         <div class="lightbox-arrow next" id="nextArrow">&#8250;</div>
-              <div class="filmstrip" id="filmstrip"></div>
+              <!--<div class="filmstrip" id="filmstrip"></div>-->
             </div>
           </div>
         </div>
@@ -152,7 +152,7 @@
                           <img class="lightbox-img" id="lightboxImage">
                           <div class="lightbox-arrow prev" id="prevArrow">&#8249;</div>
                     <div class="lightbox-arrow next" id="nextArrow">&#8250;</div>
-                          <div class="filmstrip" id="filmstrip"></div>
+                          <!--<div class="filmstrip" id="filmstrip"></div>-->
                         </div>
                       </div>
                     </div>
@@ -172,7 +172,7 @@
                                       <img class="lightbox-img" id="lightboxImage">
                                       <div class="lightbox-arrow prev" id="prevArrow">&#8249;</div>
                                 <div class="lightbox-arrow next" id="nextArrow">&#8250;</div>
-                                      <div class="filmstrip" id="filmstrip"></div>
+                                      <!--<div class="filmstrip" id="filmstrip"></div>-->
                                     </div>
                                   </div>
                                 </div>
@@ -195,7 +195,7 @@
                                     <img class="lightbox-img" id="lightboxImage">
                                     <div class="lightbox-arrow prev" id="prevArrow">&#8249;</div>
                               <div class="lightbox-arrow next" id="nextArrow">&#8250;</div>
-                                    <div class="filmstrip" id="filmstrip"></div>
+                                    <!--<div class="filmstrip" id="filmstrip"></div>-->
                                   </div>
                                 </div>
                               </div>
@@ -294,7 +294,7 @@
               const imageGrid = tab.querySelector('.image-grid');
               const lightbox = tab.querySelector('.lightbox');
               const lightboxImage = tab.querySelector('.lightbox-img');
-              const filmstrip = tab.querySelector('.filmstrip');
+              // const filmstrip = tab.querySelector('.filmstrip');
               const prevArrow = tab.querySelector('.prev');
               const nextArrow = tab.querySelector('.next');
               const closeBtn = tab.querySelector('.lightbox-closeBtn');
@@ -332,7 +332,7 @@
                 lightboxImage.src = imageGrid.children[currentIndex].src;
                 lightboxImage.style.opacity = '1';
               }
-          
+          /*
               function generateFilmstrip() {
                 filmstrip.innerHTML = '';
                 const images = imageGrid.querySelectorAll('.image');
@@ -348,6 +348,7 @@
                   filmstrip.appendChild(thumbnail);
                 });
               }
+                */
           
               function changeImage(newIndex) {
                 const oldIndex = currentIndex;
