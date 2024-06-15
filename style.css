@@ -783,6 +783,10 @@ img {
   background-color: var(--red);
 }
 
+#half-round-gutters, #k-style-gutters, #gutter-screens, #metal-roofs {
+  scroll-margin-top: 100px;
+}
+
 /* contact */
 
 .contact-flex {
@@ -1429,7 +1433,7 @@ ion-icon {
   color: var(--darkgray);
 }
 
-.hide {
+.hide, .hidden {
   display: none !important;
 }
 
@@ -2089,6 +2093,17 @@ transform: scale(1);
   .image-grid {
     grid-template-columns: repeat(2, 2fr);
   }
+
+  .tabs-nav {
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    grid-gap: 20px 45px;
+  }
+
+  .tabs-nav a {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -2181,6 +2196,23 @@ transform: scale(1);
   .services h3 {
     font-size: 24px;
   }
+
+  .lightbox-img {
+    min-width: 95%;
+    max-width: 95%;
+  }
+
+  .prev {
+    left: 45px;
+  }
+
+  .next {
+    right: 45px;
+  }
+
+  .hero .btn-group .btn {
+    min-width: 100%;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -2211,5 +2243,9 @@ transform: scale(1);
 @media screen and (max-width: 360px) {
   .col-3 .col3-col {
     padding: 20px;
+  }
+
+  .tabs-nav {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
