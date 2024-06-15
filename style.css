@@ -1310,6 +1310,10 @@ footer .logo-col {
   flex-flow: column;
 }
 
+.desktop-hide {
+  display: none;
+}
+
 .logo-col a {
   font-size: 18px;
   line-height: 1.4;
@@ -1762,6 +1766,15 @@ transform: scale(1);
   #header, .nav-scrolling {
       transition: all 0.4s ease;
  }
+
+ .mobile-hide {
+  display: none;
+ }
+
+ .dropdown {
+  padding-bottom: 15px;
+ }
+
   .header-flex {
       flex-flow: column;
       align-items: flex-start;
@@ -2123,6 +2136,11 @@ transform: scale(1);
   .lines-left:before {
     display: none;
   }
+
+  .desktop-hide {
+    display: block;
+   }
+   
   .lines-left:after {
     display: none;
   }
