@@ -15,6 +15,14 @@
   margin-bottom: 0;
 }
 
+.padding-top-small {
+  padding-top: 45px;
+}
+
+.padding-bottom-small {
+  padding-bottom: 45px;
+}
+
 .padding-top {
   padding-top: 100px;
 }
