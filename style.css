@@ -293,6 +293,19 @@ img {
 
 /* subhero */
 
+.hero *, .global-subhero * {
+  text-align: center;
+}
+
+.hero p, .global-subhero p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .btn-group {
+  justify-content: center;
+}
+
 .global-subhero {
   height: auto;
   min-height: 540px;
