@@ -95,6 +95,7 @@
         <a href="#flat">Flat</a>
         <a href="#specialty">Specialty</a>
         <a href="#metal">Metal</a>
+        <a href="#gutters">Gutters</a>
     </div>
     <div id="shingles" class="tab active">
                 <div class="image-grid" id="imageGrid">
@@ -256,6 +257,66 @@
                               </div>
                                   </div>
                                               <!-- more tabs -->
+                                                    <div id="flat" class="tab">
+                            <div class="image-grid" id="imageGrid">
+            
+                            <img class="image" src="./img/cat-flatroof1.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof2.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof3.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof4.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof5.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof6.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof7.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof8.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof9.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof10.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof11.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof12.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof13.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof14.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof15.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof16.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof17.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof18.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof19.webp" alt="" >        
+                            <img class="image" src="./img/cat-flatroof20.webp" alt="" >        
+                            
+                    <div class="lightbox" id="lightbox">
+                        <div class="lightbox-closeBtn">X</div>
+                        <div class="lightbox-slider">
+                          <img class="lightbox-img" id="lightboxImage">
+                          <div class="lightbox-arrow prev" id="prevArrow">&#8249;</div>
+                    <div class="lightbox-arrow next" id="nextArrow">&#8250;</div>
+                          <!--<div class="filmstrip" id="filmstrip"></div>-->
+                        </div>
+                      </div>
+                    </div>
+                        </div>     <div id="gutters" class="tab">
+                          <div class="image-grid" id="imageGrid">
+          
+                          <img class="image" src="./img/cat-gutters1.webp" alt="" >        
+                          <img class="image" src="./img/cat-gutters2.webp" alt="" >        
+                          <img class="image" src="./img/cat-gutters3.webp" alt="" >        
+                          <img class="image" src="./img/cat-gutters4.webp" alt="" >        
+                          <img class="image" src="./img/cat-gutters5.webp" alt="" >        
+                          <img class="image" src="./img/cat-gutters6.webp" alt="" >        
+                          <img class="image" src="./img/cat-gutters7.webp" alt="" >        
+                          <img class="image" src="./img/cat-gutters8.webp" alt="" >        
+                          <img class="image" src="./img/cat-gutters9.webp" alt="" >        
+                          <img class="image" src="./img/cat-gutters10.webp" alt="" >        
+                                
+                          
+                  <div class="lightbox" id="lightbox">
+                      <div class="lightbox-closeBtn">X</div>
+                      <div class="lightbox-slider">
+                        <img class="lightbox-img" id="lightboxImage">
+                        <div class="lightbox-arrow prev" id="prevArrow">&#8249;</div>
+                  <div class="lightbox-arrow next" id="nextArrow">&#8250;</div>
+                        <!--<div class="filmstrip" id="filmstrip"></div>-->
+                      </div>
+                    </div>
+                  </div>
+                      </div>
             </div>
             </div>
         
@@ -507,74 +568,7 @@
             });
           });
         </script>
-
-<script>
-  /* lazy loading */
-document.addEventListener("DOMContentLoaded", function() {
-  function initializeLazyLoading() {
-    let lazyImages = [].slice.call(document.querySelectorAll(".tab.active img.lazy"));
-
-    if ("IntersectionObserver" in window) {
-      let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            let lazyImage = entry.target;
-            lazyImage.src = lazyImage.dataset.src;
-            lazyImage.classList.remove("lazy");
-            lazyImageObserver.unobserve(lazyImage);
-          }
-        });
-      });
-
-      lazyImages.forEach(function(lazyImage) {
-        lazyImageObserver.observe(lazyImage);
-      });
-    } else {
-      // Fallback for browsers that do not support IntersectionObserver
-      let lazyLoad = function() {
-        let active = false;
-
-        if (active === false) {
-          active = true;
-
-          setTimeout(function() {
-            lazyImages.forEach(function(lazyImage) {
-              if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
-                lazyImage.src = lazyImage.dataset.src;
-                lazyImage.classList.remove("lazy");
-
-                lazyImages = lazyImages.filter(function(image) {
-                  return image !== lazyImage;
-                });
-
-                if (lazyImages.length === 0) {
-                  document.removeEventListener("scroll", lazyLoad);
-                  window.removeEventListener("resize", lazyLoad);
-                  window.removeEventListener("orientationchange", lazyLoad);
-                }
-              }
-            });
-
-            active = false;
-          }, 200);
-        }
-      };
-
-      document.addEventListener("scroll", lazyLoad);
-      window.addEventListener("resize", lazyLoad);
-      window.addEventListener("orientationchange", lazyLoad);
-    }
-  }
-
-  // Initialize lazy loading on the initially active tab
-  initializeLazyLoading();
-
-  // Reinitialize lazy loading when a new tab is clicked
-  document.querySelectorAll('.tabs-nav a').forEach((link) => {
-    link.addEventListener('click', initializeLazyLoading);
-  });
-});
-</script>
+        
           
           <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
           <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
