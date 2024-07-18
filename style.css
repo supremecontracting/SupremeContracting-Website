@@ -2055,7 +2055,6 @@ transform: scale(1);
   nav {
     overflow-y: scroll;
     scrollbar-width: thin;
-    min-height: 100vh !important;
     scrollbar-color: #555 #f1f1f1;
     -webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on iOS */
 }
