@@ -2052,8 +2052,15 @@ transform: scale(1);
 
   
 
+  nav {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #f1f1f1;
+    -webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on iOS */
+}
+
 nav::-webkit-scrollbar {
-    width: 1px;
+    width: 8px; /* Increase the width for better visibility */
 }
 
 nav::-webkit-scrollbar-track {
@@ -2067,11 +2074,6 @@ nav::-webkit-scrollbar-thumb {
 
 nav::-webkit-scrollbar-thumb:hover {
     background: #555;
-}
-
-nav {
-    scrollbar-width: thin;
-    scrollbar-color: #555 #f1f1f1;
 }
 
 }
