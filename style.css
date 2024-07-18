@@ -2056,6 +2056,7 @@ transform: scale(1);
     overflow-y: scroll;
     scrollbar-width: thin;
     scrollbar-color: #555 #f1f1f1;
+    min-height: 100px;
     -webkit-overflow-scrolling: touch; /* Ensures smooth scrolling on iOS */
 }
 
