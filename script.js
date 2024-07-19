@@ -1,13 +1,19 @@
 $(document).ready(function() {
-    // Your jQuery code here
-$('#header').prepend('<div id="menu-icon"><span class="first"></span><span class="second"></span><span class="third"></span></div>');
-	
-$("#menu-icon").on("click", function(){
-$("nav").slideToggle();
-$(this).toggleClass("active");
+  // Your jQuery code here
+  $('#header').prepend('<div id="menu-icon"><span class="first"></span><span class="second"></span><span class="third"></span></div>');
+  
+  $("#menu-icon").on("click", function() {
+    $("nav").slideToggle();
+    $(this).toggleClass("active");
+  });
+
+  // Add event listeners to each menu link to close the menu on click or tap
+  $("nav ul li a").on("click", function() {
+    $("nav").slideUp();
+    $("#menu-icon").removeClass("active");
+  });
 });
 
-});
 
 let scrollPosition = window.scrollY;
 const header = document.querySelector("#header");
@@ -213,5 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
   });
+
+  // menu links on click tap 
   
 
