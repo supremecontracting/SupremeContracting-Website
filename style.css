@@ -1211,7 +1211,15 @@ img {
 /* flat roof page */
 
 .flat-roof-subhero {
-  background-image: url(./img/house.webp);
+  background-image: url(./img/cat-flatroof14.webp);
+}
+
+.about-subhero {
+  background-image: url(./img/cat-metal2.webp);
+}
+
+.contact-subhero {
+  background-image: url(./img/cat-specialty12.webp);
 }
 
 .line-connectors-top, .line-connectors-bottom {
@@ -1285,7 +1293,7 @@ width: 25%;
 /* specialty roofs page */
 
 .specialty-roof-subhero {
-  background-image: url(./img/house.webp);
+  background-image: url(./img/cat-specialty16.webp);
 }
 
 .specialty-roofs .img-right.specialty-handsplit.img-container {
@@ -2126,7 +2134,7 @@ nav::-webkit-scrollbar-thumb:hover {
   }
 
   .hero {
-    background-image: url(./img/hero-img.webp);
+    background-image: url(./img/cat-shingles24.webp);
   background-size: cover;
   background-position: center center;
   }
