@@ -12,7 +12,7 @@ $(document).ready(function() {
     $("nav").slideUp();
     $("#menu-icon").removeClass("active");
   });
-});
+}); 
 
 
 let scrollPosition = window.scrollY;
