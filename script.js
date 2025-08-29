@@ -46,7 +46,7 @@ const footer = document.querySelector('.footer-copyright');
 const copyrightParagraph = document.createElement('p');
 
 // Set the content of the paragraph to the copyright notice
-copyrightParagraph.textContent = `© ${currentYear} Supreme Contracting. All Rights Reserved.`;
+copyrightParagraph.textContent = `© ${currentYear} Supreme Contracting VA. All Rights Reserved.`;
 
 // Create the Sitemap link
 const sitemapLink = document.createElement('a');
