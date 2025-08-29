@@ -50,6 +50,17 @@ const footer = document.querySelector('.footer-copyright');
 const copyrightParagraph = document.createElement('p');
 copyrightParagraph.textContent = `© ${currentYear} Supreme Contracting VA. All Rights Reserved.`;
 
+const sitemapLink = document.createElement('a');
+sitemapLink.href = "/sitemap.html";
+sitemapLink.textContent = "Sitemap";
+sitemapLink.style.marginLeft = "10px";
+
+// Append only if footer exists
+copyrightParagraph.appendChild(sitemapLink);
+if (footer) {
+  footer.appendChild(copyrightParagraph);
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     // Get all roofing items and sidebar links
     var roofingItems = document.querySelectorAll('.roofing-item');
@@ -232,5 +243,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // menu links on click tap 
+
   
 
