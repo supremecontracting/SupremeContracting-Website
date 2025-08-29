@@ -142,6 +142,8 @@ button {
 .eyebrow {
   text-transform: uppercase;
   font-weight: 400;
+  font-style: italic;
+  text-transform: lowercase;
 }
 .max-width {
   max-width: 1400px;
