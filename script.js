@@ -48,6 +48,15 @@ const copyrightParagraph = document.createElement('p');
 // Set the content of the paragraph to the copyright notice
 copyrightParagraph.textContent = `© ${currentYear} Supreme Contracting. All Rights Reserved.`;
 
+// Create the Sitemap link
+const sitemapLink = document.createElement('a');
+sitemapLink.href = "/sitemap.html";  // adjust path if needed
+sitemapLink.textContent = "Sitemap";
+sitemapLink.style.marginLeft = "10px"; // adds spacing
+
+// Append the link to the paragraph
+copyrightParagraph.appendChild(sitemapLink);
+
 // Append the paragraph to the footer
 footer.appendChild(copyrightParagraph);
 
