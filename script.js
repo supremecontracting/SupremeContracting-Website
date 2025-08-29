@@ -43,19 +43,13 @@ window.addEventListener("scroll", function () {
 // Get the current year
 const currentYear = new Date().getFullYear();
 
-// Select the footer element
-const footer = document.querySelector('.footer-copyright');
+// Set the year in any <span id="year"></span> within the footer
+document.addEventListener('DOMContentLoaded', function () {
+  var y = document.getElementById('year');
+  if (y) y.textContent = currentYear;
+});
 
-// Create elements
-const copyrightParagraph = document.createElement('p');
-copyrightParagraph.textContent = `© ${currentYear} Supreme Contracting VA. All Rights Reserved.`;
 
-// Append only if footer exists (and clean up any pre-existing sitemap link added by older scripts)
-if (footer) {
-  const existingSitemap = footer.querySelector('a[href$="/sitemap.html"], a[href="/sitemap.html"]');
-  if (existingSitemap) existingSitemap.remove();
-  footer.appendChild(copyrightParagraph);
-}
 document.addEventListener("DOMContentLoaded", function () {
     // Get all roofing items and sidebar links
     var roofingItems = document.querySelectorAll('.roofing-item');
@@ -238,6 +232,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // menu links on click tap 
+
 
   
 
