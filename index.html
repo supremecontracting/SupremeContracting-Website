@@ -33,53 +33,260 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="icon" href="https://supremecontractingva.com/img/favicon.png" type="image/x-icon">
     <link rel="apple-touch-icon" href="https://supremecontractingva.com/apple-touch-icon.png">
   
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Supreme Contracting VA",
-        "image": "https://supremecontractingva.com/logo.jpg",
-        "@id": "https://supremecontractingva.com",
-        "url": "https://supremecontractingva.com",
-        "telephone": "+7034340697",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "8993 Westchester Dr",
-          "addressLocality": "Manassas",
-          "addressRegion": "Virginia",
-          "postalCode": "20112",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": "38.7509",   
-          "longitude": "77.4753" 
-        },
-        "openingHoursSpecification": {
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "RoofingContractor",
+      "@id": "https://supremecontractingva.com/#org",
+      "name": "Supreme Contracting VA",
+      "url": "https://supremecontractingva.com/",
+      "image": "https://supremecontractingva.com/img/logo.webp",
+      "logo": "https://supremecontractingva.com/img/logo.webp",
+      "telephone": "+1-703-434-0697",
+      "slogan": "Protecting the Future. Restoring the Past.",
+      "founder": { "@type": "Person", "name": "Tony Gonzalez" },
+      "foundingDate": "2019",
+      "availableLanguage": ["English","Spanish"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "8993 Westchester Dr",
+        "addressLocality": "Manassas",
+        "addressRegion": "VA",
+        "postalCode": "20112",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.7509,
+        "longitude": -77.4753
+      },
+      "hasMap": "https://maps.google.com/?cid=17438007366733590764",
+      "sameAs": [
+        "https://maps.google.com/?cid=17438007366733590764"
+      ],
+      "openingHoursSpecification": [
+        {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "08:00",
-          "closes": "15:00"
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "07:30",
+          "closes": "17:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "GeoCircle",
+          "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 38.7509, "longitude": -77.4753 },
+          "geoRadius": "50 mi"
         },
-        
-        "areaServed": {
-          "@type": "Place",
-          "geoRadius": "50mi",
-          "address": {
-            "@type": "20112",
-            "addressLocality": "Manassas",
-            "addressRegion": "Virginia",
-            "addressCountry": "US"
+        { "@type": "Place", "name": "Northern Virginia" },
+        { "@type": "Place", "name": "Fairfax, VA" },
+        { "@type": "Place", "name": "Arlington, VA" },
+        { "@type": "Place", "name": "Springfield, VA" },
+        { "@type": "Place", "name": "Gainesville, VA" },
+        { "@type": "Place", "name": "Manassas, VA" },
+        { "@type": "Place", "name": "Alexandria, VA" },
+        { "@type": "Place", "name": "Woodbridge, VA" },
+        { "@type": "Place", "name": "Fredericksburg, VA" },
+        { "@type": "Place", "name": "Stafford, VA" },
+        { "@type": "Place", "name": "Falls Church, VA" },
+        { "@type": "Place", "name": "Chantilly, VA" },
+        { "@type": "Place", "name": "Leesburg, VA" }
+      ],
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+1-703-434-0697",
+          "contactType": "Customer Service",
+          "areaServed": "US-VA",
+          "availableLanguage": ["English","Spanish"]
+        }
+      ],
+      "knowsAbout": [
+        "Roof Repair",
+        "Roof Replacement",
+        "Asphalt Shingle Roofing",
+        "Metal Roofing (Standing Seam)",
+        "Flat Roof Membranes (TPO, EPDM, Modified Bitumen)",
+        "Gutter Installation",
+        "Gutter Guards / Gutter Screens",
+        "Roof Inspection",
+        "Emergency Roof Tarping",
+        "Insurance Claim Assistance",
+        "Cedar Shake Roofing",
+        "Synthetic Slate Roofing",
+        "Natural Slate Roofing"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://supremecontractingva.com/#roof-repair",
+            "name": "Roof Repair",
+            "serviceType": "Roof repair",
+            "alternateName": ["Emergency Roof Repair","Storm-Damage Roof Repair","Roof Leak Repair"],
+            "areaServed": "Northern Virginia",
+            "provider": { "@id": "https://supremecontractingva.com/#org" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://supremecontractingva.com/asphalt-shingles.html#service",
+            "name": "Roof Replacement (Asphalt Shingles)",
+            "serviceType": "Roof replacement",
+            "alternateName": ["Shingle Roof Replacement","Architectural Shingles"],
+            "areaServed": "Northern Virginia",
+            "provider": { "@id": "https://supremecontractingva.com/#org" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://supremecontractingva.com/roofing.html#metal-roofs",
+            "name": "Metal Roof Installation",
+            "serviceType": "Metal roofing",
+            "alternateName": ["Standing Seam Metal Roof"],
+            "areaServed": "Northern Virginia",
+            "provider": { "@id": "https://supremecontractingva.com/#org" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://supremecontractingva.com/flat-roofs.html#service",
+            "name": "Flat Roof Membrane Installation",
+            "serviceType": "Flat roof membranes",
+            "alternateName": ["TPO Roofing","EPDM Roofing","Torch Down","Self-Adhered Membrane"],
+            "areaServed": "Northern Virginia",
+            "provider": { "@id": "https://supremecontractingva.com/#org" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://supremecontractingva.com/#roof-inspection",
+            "name": "Roof Inspection",
+            "serviceType": "Roof inspection",
+            "areaServed": "Northern Virginia",
+            "provider": { "@id": "https://supremecontractingva.com/#org" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://supremecontractingva.com/#emergency-tarping",
+            "name": "Emergency Roof Tarping",
+            "serviceType": "Emergency roof services",
+            "alternateName": ["Emergency Tarp","Storm Tarping"],
+            "areaServed": "Northern Virginia",
+            "provider": { "@id": "https://supremecontractingva.com/#org" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://supremecontractingva.com/#insurance-claim-assistance",
+            "name": "Insurance Claim Roof Replacement",
+            "serviceType": "Insurance claim assistance",
+            "alternateName": ["Insurance Claim Assistance"],
+            "areaServed": "Northern Virginia",
+            "provider": { "@id": "https://supremecontractingva.com/#org" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://supremecontractingva.com/gutters.html#service",
+            "name": "Gutter Installation (K-Style)",
+            "serviceType": "Gutters & downspouts",
+            "alternateName": ["Seamless K-Style Gutters"],
+            "areaServed": "Northern Virginia",
+            "provider": { "@id": "https://supremecontractingva.com/#org" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://supremecontractingva.com/gutters.html#half-round",
+            "name": "Half-Round Gutters",
+            "serviceType": "Gutters & downspouts",
+            "areaServed": "Northern Virginia",
+            "provider": { "@id": "https://supremecontractingva.com/#org" }
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "@id": "https://supremecontractingva.com/gutters.html#screens",
+            "name": "Gutter Screens",
+            "serviceType": "Gutter guards",
+            "alternateName": ["Gutter Guards"],
+            "areaServed": "Northern Virginia",
+            "provider": { "@id": "https://supremecontractingva.com/#org" }
           }
         }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Service Catalog",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Roofing Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@id": "https://supremecontractingva.com/#roof-repair" } },
+              { "@type": "Offer", "itemOffered": { "@id": "https://supremecontractingva.com/asphalt-shingles.html#service" } },
+              { "@type": "Offer", "itemOffered": { "@id": "https://supremecontractingva.com/roofing.html#metal-roofs" } },
+              { "@type": "Offer", "itemOffered": { "@id": "https://supremecontractingva.com/flat-roofs.html#service" } },
+              { "@type": "Offer", "itemOffered": { "@id": "https://supremecontractingva.com/#roof-inspection" } },
+              { "@type": "Offer", "itemOffered": { "@id": "https://supremecontractingva.com/#emergency-tarping" } },
+              { "@type": "Offer", "itemOffered": { "@id": "https://supremecontractingva.com/#insurance-claim-assistance" } }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Gutter Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@id": "https://supremecontractingva.com/gutters.html#service" } },
+              { "@type": "Offer", "itemOffered": { "@id": "https://supremecontractingva.com/gutters.html#half-round" } },
+              { "@type": "Offer", "itemOffered": { "@id": "https://supremecontractingva.com/gutters.html#screens" } }
+            ]
+          }
+        ]
       }
-      </script>
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://supremecontractingva.com/#website",
+      "url": "https://supremecontractingva.com/",
+      "name": "Supreme Contracting VA",
+      "publisher": { "@id": "https://supremecontractingva.com/#org" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://supremecontractingva.com/#homepage",
+      "url": "https://supremecontractingva.com/",
+      "name": "Roofing Contractors in Northern Virginia",
+      "isPartOf": { "@id": "https://supremecontractingva.com/#website" },
+      "inLanguage": "en",
+      "publisher": { "@id": "https://supremecontractingva.com/#org" },
+      "mainEntity": { "@id": "https://supremecontractingva.com/#org" }
+    }
+  ]
+}
+</script>
       
 </head>
 <body>
