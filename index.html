@@ -312,6 +312,56 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       column-count: 1;
     }
   }
+
+/* Two-column layout for extra-wide screens */
+@media (min-width: 1400px) {
+  .footer-areas-served .areas-served-list {
+    column-count: 2;
+    column-gap: 2rem;
+  }
+  .footer-areas-served .areas-served-list li {
+    break-inside: avoid;
+  }
+}
+
+</style>
+
+
+<style>
+  /* Full-width Areas Served under footer columns */
+  .footer-areas-served {
+    margin-top: 24px;
+  }
+  .footer-areas-served .areas-served-wrapper {
+    padding-top: 8px;
+    border-top: 1px solid rgba(0,0,0,0.08);
+  }
+  .footer-areas-served h4 {
+    margin: 12px 0 8px;
+    font-weight: 600;
+  }
+  .footer-areas-served .areas-served-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .footer-areas-served .areas-served-list li {
+    margin: 4px 0;
+    line-height: 1.4;
+    color: #333;
+  }
+
+/* Two-column layout for extra-wide screens */
+@media (min-width: 1400px) {
+  .footer-areas-served .areas-served-list {
+    column-count: 2;
+    column-gap: 2rem;
+  }
+  .footer-areas-served .areas-served-list li {
+    break-inside: avoid;
+  }
+}
+
 </style>
 
 </head>
@@ -629,11 +679,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <a href="./gutters.html#k-style-gutters">K-Style Gutters</a>
                   <a href="./gutters.html#gutter-screens">Gutter Screens</a>
   </div>
+<div class="footer-col">
+    <h4><a href="./about-us.html">Company</a></h4>
+    <a href="./about-us.html">Our Story</a>
+    <a href="./gallery.html">Gallery</a>
+    <a href="./contact.html">Contact</a>
 
+  </div>
   
-  <div class="footer-col areas-served">
+</div>
+
+<div class="max-width footer-areas-served">
+  <div class="areas-served-wrapper">
     <h4>Areas Served</h4>
-    <ul class="areas-served-list">
+    <ul class="areas-served-list single-column">
       <li>Alexandria, VA</li>
       <li>Arlington, VA</li>
       <li>Annandale, VA</li>
@@ -676,15 +735,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <li>Fredericksburg, VA 22401</li>
     </ul>
   </div>
-<div class="footer-col">
-    <h4><a href="./about-us.html">Company</a></h4>
-    <a href="./about-us.html">Our Story</a>
-    <a href="./gallery.html">Gallery</a>
-    <a href="./contact.html">Contact</a>
-
-  </div>
-  
 </div>
+
 <div class="footer-copyright-container">
 <div class="max-width footer-copyright">
   <p>
