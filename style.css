@@ -249,3 +249,72 @@
     order: 4 !important;
   }
 }
+
+
+/* ============================= */
+/* Mobile top-nav layout fix v3  */
+/* ============================= */
+@media (max-width: 768px) {
+
+  /* Use a predictable grid so CTA + phone + quote don't overlap or clip */
+  .top-nav .top-nav-flex{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-areas:
+      "spanish spanish"
+      "cta cta"
+      "phone quote" !important;
+    gap: 10px !important;
+    align-items: center !important;
+    justify-items: center !important;
+    padding: 10px 12px !important;
+  }
+
+  .top-nav .top-nav-flex > p{
+    grid-area: spanish !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+
+  /* The .top-nav-link wrappers: 1st = CTA, 2nd = phone, 3rd = quote */
+  .top-nav .top-nav-flex > .top-nav-link:nth-of-type(1){
+    grid-area: cta !important;
+    width: 100% !important;
+  }
+
+  .top-nav .top-nav-flex > .top-nav-link:nth-of-type(2){
+    grid-area: phone !important;
+    width: 100% !important;
+  }
+
+  .top-nav .top-nav-flex > .top-nav-link:nth-of-type(3){
+    grid-area: quote !important;
+    width: 100% !important;
+  }
+
+  /* CTA button: keep readable + avoid huge height */
+  .top-nav .top-nav-flex .free-inspection-cta{
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 10px 12px !important;
+    font-size: 13px !important;
+    line-height: 1.15 !important;
+    white-space: normal !important;
+  }
+
+  /* Phone + Quote buttons: ensure full text/icons display */
+  .top-nav .top-nav-flex > .top-nav-link:nth-of-type(2) a,
+  .top-nav .top-nav-flex > .top-nav-link:nth-of-type(3) a{
+    width: 100% !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 8px 10px !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+}
