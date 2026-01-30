@@ -189,3 +189,63 @@
     gap: 8px !important;
   }
 }
+
+
+/* ============================= */
+/* Mobile: show phone + quote with CTA */
+/* (stronger override)           */
+/* ============================= */
+@media (max-width: 768px) {
+
+  /* Ensure all header items are not hidden by earlier mobile rules */
+  .top-nav .top-nav-flex,
+  .top-nav .top-nav-flex .top-nav-link,
+  .top-nav .top-nav-flex a,
+  .top-nav .top-nav-flex p {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* Force each item block to display (some rules set display:none) */
+  .top-nav .top-nav-flex .top-nav-link {
+    display: inline-flex !important;
+  }
+
+  /* Layout: CTA on its own row; phone + quote on next row */
+  .top-nav .top-nav-flex {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  /* Spanish line full width */
+  .top-nav .top-nav-flex > p {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 !important;
+    order: 1 !important;
+  }
+
+  /* CTA full width */
+  .top-nav .top-nav-flex .free-inspection-cta {
+    width: 100% !important;
+    display: inline-flex !important;
+    justify-content: center !important;
+    order: 2 !important;
+  }
+
+  /* Phone + Quote as two half-width items */
+  .top-nav .top-nav-flex a[href^="tel:"] {
+    display: inline-flex !important;
+    width: calc(50% - 10px) !important;
+    justify-content: center !important;
+    order: 3 !important;
+  }
+
+  .top-nav .top-nav-flex a[href*="contact"] {
+    display: inline-flex !important;
+    width: calc(50% - 10px) !important;
+    justify-content: center !important;
+    order: 4 !important;
+  }
+}
