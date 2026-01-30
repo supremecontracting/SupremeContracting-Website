@@ -142,3 +142,33 @@
     left: auto;
   }
 }
+
+
+/* ===== Updated Roof CTA Banner (Centered + Dual Buttons) ===== */
+
+.roof-cta-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.roof-cta-flex p {
+  flex: 1;
+  text-align: center;
+}
+
+.roof-cta-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-white {
+  background: #fff;
+  color: #b30000;
+  border: 2px solid #fff;
+}
+
+.btn-white:hover {
+  background: #f2f2f2;
+}
