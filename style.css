@@ -205,3 +205,30 @@
     box-shadow: none !important;
   }
 }
+
+
+/* ============================= */
+/* Mobile: top header rows stack cleanly (no overlap) */
+/* ============================= */
+@media (max-width: 768px){
+
+  /* Let the top bar take natural height (it wraps with CTA + phone + quote) */
+  .top-nav{
+    position: relative !important;   /* remove fixed overlay */
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .top-nav-flex{
+    height: auto !important;
+    padding: 10px 0 !important;
+    row-gap: 10px !important;
+  }
+
+  /* Header should not sit on top of the top bar */
+  #header{
+    position: sticky !important;
+    top: 0 !important;
+    border-top: 0 !important;        /* removes the line you’re seeing */
+  }
+}
