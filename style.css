@@ -318,3 +318,60 @@
     white-space: nowrap !important;
   }
 }
+
+
+/* ============================= */
+/* Mobile top-nav CTA clip fix   */
+/* ============================= */
+@media (max-width: 768px) {
+
+  /* Prevent the top bar/header from clipping the CTA */
+  .top-nav,
+  .top-nav .top-nav-flex{
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Give the CTA a little breathing room so it doesn't collide with edges */
+  .top-nav .top-nav-flex > .top-nav-link:nth-of-type(1){
+    padding: 2px 0 !important;
+  }
+
+  .top-nav .top-nav-flex .free-inspection-cta{
+    box-sizing: border-box !important;
+    max-width: 100% !important;
+  }
+}
+
+
+/* ============================= */
+/* Mobile header overlap fix v5  */
+/* ============================= */
+@media (max-width: 768px){
+
+  /* Keep top-nav in normal flow and above the header */
+  .top-nav{
+    position: relative !important;
+    z-index: 999999 !important;
+  }
+
+  /* On mobile, avoid the main header overlapping the top-nav (many themes fix the header at top:0) */
+  .header{
+    position: relative !important;   /* was fixed; causes overlap */
+    top: auto !important;
+    z-index: 1 !important;
+  }
+
+  /* If your theme uses a different header class, this helps too */
+  header{
+    position: relative !important;
+    top: auto !important;
+  }
+
+  /* Ensure the logo/menu row doesn't pull upward */
+  .header-flex,
+  .header .max-width{
+    margin-top: 0 !important;
+  }
+}
