@@ -186,3 +186,22 @@
     z-index: 9998 !important;
   }
 }
+
+
+/* ============================= */
+/* Mobile: remove divider line over phone/quote */
+/* ============================= */
+@media (max-width: 768px){
+  .top-nav .top-nav-link{
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+    background-clip: padding-box !important;
+  }
+
+  /* Some themes add a top border to the anchor itself */
+  .top-nav .top-nav-link a{
+    border-top: 0 !important;
+    box-shadow: none !important;
+  }
+}
