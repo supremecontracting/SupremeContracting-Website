@@ -158,3 +158,31 @@
     white-space:nowrap !important;
   }
 }
+
+
+/* ============================= */
+/* Mobile: prevent top-nav overlap with logo/nav */
+/* ============================= */
+@media (max-width: 768px){
+
+  /* keep the top bar above everything and in normal flow */
+  .top-nav{
+    position: relative !important;
+    z-index: 9999 !important;
+  }
+
+  /* your header uses #header (not .header) */
+  #header{
+    position: sticky !important;  /* keeps it sticky without overlaying the top bar */
+    top: 0 !important;
+    z-index: 9998 !important;
+    margin-top: 0 !important;
+  }
+
+  /* safety: if any fixed positioning exists, neutralize it */
+  .header, header{
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 9998 !important;
+  }
+}
