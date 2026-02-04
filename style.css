@@ -232,3 +232,85 @@
     border-top: 0 !important;        /* removes the line you’re seeing */
   }
 }
+
+
+/* FAQ page */
+.faq-container { max-width: 1000px; }
+
+/* wrapper */
+.faq-list { display: flex; flex-direction: column; gap: 16px; }
+
+/* each accordion item */
+.faq-item {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.10);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* clickable question row */
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;              /* fallback */
+  padding: 18px 18px 18px 56px;  /* room for left icon */
+  font-weight: 700;
+  position: relative;
+  line-height: 1.35;
+  background: rgba(0,0,0,0.03);
+  border-left: 6px solid var(--red);
+}
+
+/* hide native disclosure triangle across browsers */
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::marker { content: ""; }
+
+/* plus/minus icon (left) */
+.faq-item summary::before {
+  content: "+";
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 900;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.18);
+}
+
+/* optional right caret for "accordion" feel */
+.faq-item summary::after {
+  content: "›";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  font-size: 18px;
+  opacity: 0.65;
+}
+
+/* open state */
+.faq-item[open] summary {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+}
+.faq-item[open] summary::before { content: "–"; }
+.faq-item[open] summary::after { transform: translateY(-50%) rotate(-90deg); opacity: 0.8; }
+
+/* answer area */
+.faq-answer { padding: 16px 18px 18px 18px; }
+.faq-answer p { margin: 10px 0; }
+.faq-bullets, .faq-steps { margin: 10px 0 0 18px; }
+
+/* spacing + readability on small screens */
+@media (max-width: 600px){
+  .faq-item summary { padding: 16px 14px 16px 52px; }
+  .faq-item summary::before { left: 14px; }
+  .faq-item summary::after { right: 14px; }
+}
+
